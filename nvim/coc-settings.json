@@ -1,0 +1,42 @@
+{
+  "rust-analyzer.enable": true,
+  "rust-analyzer.server.path": "/usr/local/bin/rust-analyzer",
+  "eslint.autoFixOnSave": true,
+  "suggest.completionItemKindLabels": {
+    "variable": "\uf71b (var)",
+    "constant": "\uf8ff (const)",
+    "struct": "\ufb44 (struct)",
+    "class": "\uf0e8 (class)",
+    "interface": "\ufa52 (interface)",
+    "text": "\ue612 (text)",
+    "enum": "\uf0ca (enum)",
+    "enumMember": "\uf02b (enumem)",
+    "color": "\ue22b (color)",
+    "property": "\ufab6 (prop)",
+    "field": "\uf635 (field)",
+    "function": "\uf6a6 (func)",
+    "method": "\uf6a6 (func)",
+    "unit": "\uf475 (unit)",
+    "file": "\uf471 (file)",
+    "value": "\uf8ae (val)",
+    "event": "\ufacd (event)",
+    "folder": "\uf115 (folder)",
+    "keyword": "\uf805 (kword)",
+    "snippet": "\uf64d (snip)",
+    "operator": "\uf915 (operator)",
+    "reference": "\uf87a (ref)",
+    "typeParameter": "\uf278 (type param)",
+    "default": "\uf29c (default)"
+  },
+  "languageserver": {
+    "golang": {
+      "command": "gopls",
+      "filetypes": ["go"],
+      "initializationOptions": {
+        "gocodeCompletionEnable": true,
+        "diagnosticsEnabled": true,
+        "lintTool": "golint"
+      }
+    }
+  }
+}
