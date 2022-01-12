@@ -30,6 +30,12 @@ let g:coc_global_extensions = [
 			\ 'coc-eslint',
 			\ 'coc-scssmodules',
 			\ 'coc-json',
+			\ 'coc-jedi',
+			\ 'coc-lua',
+			\ 'coc-marketplace',
+			\ 'coc-rust-analyzer',
+			\ 'coc-scssmodules',
+			\ 'coc-toml',
 			\ ]
 
 " General options
