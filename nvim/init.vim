@@ -97,8 +97,8 @@ let g:NERDTreeWinSize = 40
 
 set re=0
 set background=dark
-set number
-set nornu
+set number relativenumber
+set nu rnu
 set termguicolors
 set shiftwidth=4
 set tabstop=4
@@ -106,6 +106,7 @@ set encoding=UTF-8
 set winfixwidth
 set noshowmode
 set cursorline
+set mouse+=a
 let &t_ut = ''
 filetype plugin indent on
 
