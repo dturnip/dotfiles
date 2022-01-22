@@ -3,26 +3,42 @@ call plug#begin(stdpath('data') . '/plugged')
 Plug 'joshdick/onedark.vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'ayu-theme/ayu-vim'
-Plug 'projekt0n/github-nvim-theme'
+" Plug 'projekt0n/github-nvim-theme'
 Plug 'preservim/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 " Plug 'glepnir/spaceline.vim'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'shmargum/vim-sass-colors'
 " Plug 'andweeb/presence.nvim'
 Plug 'wakatime/vim-wakatime'
 Plug 'sbdchd/neoformat'
 Plug 'sainnhe/everforest'
-Plug 'github/copilot.vim'
+" Plug 'github/copilot.vim'
 Plug 'morhetz/gruvbox'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
+Plug 'romgrk/barbar.nvim'
+Plug 'norcalli/nvim-colorizer.lua'
+
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+" Plug 'hrsh7th/cmp-vsnip'
+Plug 'L3MON4D3/LuaSnip'
+Plug 'saadparwaiz1/cmp_luasnip'
+Plug 'hrsh7th/cmp-nvim-lua'
+Plug 'hrsh7th/nvim-cmp'
+
+Plug 'numToStr/Comment.nvim'
+
+Plug 'onsails/lspkind-nvim'
 
 call plug#end()
 let g:coc_global_extensions = [
