@@ -379,6 +379,23 @@ cmp.setup.cmdline(':', {
 	})
 })
 
+-- require('nvim-treesitter.configs').setup({
+-- 	ensure_installed = {},
+-- 	sync_install = false,
+-- 	ignore_install = {},
+-- 	highlight = {
+-- 		enable = true,
+-- 		disable = {},
+-- 	}
+-- })
+
+require('nvim-treesitter.configs').setup({
+	ensure_installed = { 'rust', 'javascript', 'typescript' },
+	highlight = {
+		enable = true,
+	}
+})
+
 require("lualine").setup {
   options = {
     icons_enabled = true,
