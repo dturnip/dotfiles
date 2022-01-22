@@ -211,6 +211,8 @@ autocmd VimEnter * call Bufferline_config()
 
 set completeopt=menu,menuone,noselect
 
+lua require('colorizer').setup()
+
 lua << EOF
 local nvim_lsp = require('lspconfig')
 
