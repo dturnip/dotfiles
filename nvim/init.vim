@@ -206,6 +206,10 @@ autocmd ColorScheme nord call Nord_config()
 colorscheme nord
 
 lua << END
+" autocmd BufEnter * call Bufferline_config()
+autocmd VimEnter * call Bufferline_config()
+
+set completeopt=menu,menuone,noselect
 require("lualine").setup {
   options = {
     icons_enabled = true,
