@@ -261,7 +261,45 @@ for _, lsp in ipairs(servers) do
     }
   }
 end
+
 local cmp = require("cmp")
+local lspkind = require("lspkind")
+-- Setup completion symbols
+
+lspkind.init({
+	with_text = true,
+	preset = 'codicons',
+	-- Personal overrides: Comment out for default codicons
+	symbol_map = {
+		Text = '',
+	-- 	Method = '',
+	-- 	Function = '',
+	-- 	Constructor = '',
+	-- 	Field = '',
+		Variable = '',
+	-- 	Class = '',
+	-- 	Interface = '',
+		Module = '',
+	-- 	Property = '',
+	-- 	Unit = '',
+	-- 	Value = '',
+		Enum = '',
+		Keyword = '',
+	-- 	Snippet = '',
+	-- 	Color = '',
+	-- 	File = '',
+	-- 	Reference = '',
+	-- 	Folder = '',
+		EnumMember = '',
+		Constant = '',
+		Struct = '',
+	-- 	Event = '',
+	-- 	Operator = '',
+	-- 	TypeParameter = '',
+	-- }
+	}
+})
+
   -- Setup nvim-cmp.
 
 cmp.setup({
