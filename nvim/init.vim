@@ -198,6 +198,40 @@ function Nord_config()
 	hi CursorLine guibg=none ctermbg=none
 	hi CursorLineNr guifg=#b48ead guibg=none
 	hi Normal ctermbg=NONE guibg=NONE
+
+	" nvim-cmp
+	hi CmpItemAbbrMatch guifg=#88c0d0
+	hi CmpItemAbbrMatchFuzzy guifg=#88c0d0
+	" hi CmpItemKind
+	hi CmpItemKindEnum guifg=#ebcb8b
+	" hi CmpItemKindFile
+	hi CmpItemKindText guifg=#bf616a
+	" hi CmpItemKindUnit
+	hi CmpItemKindClass guifg=#ebcb8b
+	" hi CmpItemKindColor
+	" hi CmpItemKindEvent
+	hi CmpItemKindField guifg=#81a1c1
+	" hi CmpItemKindValue
+	" hi CmpItemKindFolder
+	hi CmpItemKindMethod guifg=#b48ead
+	hi CmpItemKindModule guifg=#d08770
+	hi CmpItemKindStruct guifg=#ebcb8b
+	" hi CmpItemKindDefault
+	hi CmpItemKindKeyword guifg=#ebcb8b
+	hi CmpItemKindSnippet guifg=#a3be8c
+	hi CmpItemKindConstant guifg=#81a1c1
+	hi CmpItemKindFunction guifg=#b48ead
+	" hi CmpItemKindOperator
+	hi CmpItemKindProperty guifg=#81a1c1
+	hi CmpItemKindVariable guifg=#81a1c1
+	" hi CmpItemKindInterface
+	" hi CmpItemKindReference
+	hi CmpItemKindEnumMember guifg=#ebcb8b
+	hi CmpItemKindConstructor guifg=#b48ead
+	hi CmpItemKindTypeParameter guifg=#bf616a
+
+	" Disable overrode guifg colour for selected completion buffer
+	hi PmenuSel guifg=NONE
 endfunction
 
 autocmd ColorScheme gruvbox call Gruvbox_config()
