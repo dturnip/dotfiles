@@ -152,6 +152,30 @@ nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
+" Buffer management
+function Bufferline_config()
+
+	" Buffer opened on VimEnter that is not NERD_tree
+
+	if stridx(bufname("%"), "NERD_tree") == -1
+		if strchars(bufname("%")) > 0
+			:NERDTree | wincmd p
+		endif
+	endif
+
+	" Space Bufferline
+	lua require('bufferline.state').set_offset(40, 'FileTree')
+	let g:bufferline.icon_pinned = ''
+	let g:bufferline.icon_close_tab_modified = '●'
+	let g:bufferline.maximum_padding = 4
+	echo "Bufferline_config() loaded"
+endfunction
+
+nnoremap <leader>{  :BufferPrevious<CR>
+nnoremap <leader>}  :BufferNext<CR>
+nnoremap <leader>tp :BufferPin<CR>
+nnoremap <leader>tw :BufferClose<CR>
+nnoremap <leader>to :call Bufferline_config()<CR>:call Bufferline_config()<CR>
 
 nnoremap <silent> <C-l> :nohl<CR><C-l>
 " Open NERDTree
