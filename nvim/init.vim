@@ -259,6 +259,86 @@ for _, lsp in ipairs(servers) do
     }
   }
 end
+local cmp = require("cmp")
+  -- Setup nvim-cmp.
+
+cmp.setup({
+	snippet = {
+		-- REQUIRED - you must specify a snippet engine
+		expand = function(args)
+		-- vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+		require("luasnip").lsp_expand(args.body) -- For `luasnip` users.
+		-- require('snippy').expand_snippet(args.body) -- For `snippy` users.
+		-- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
+		end,
+	},
+	mapping = {
+		['<C-j>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 'c' }),
+		['<C-k>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 'c' }),
+		['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
+		['<C-d>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
+		['<Esc>'] = cmp.mapping({
+			i = cmp.mapping.abort(),
+			c = cmp.mapping.close(),
+		}),
+		['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+		-- ['<C-n>'] = cmp.mappinfunction(fallback)
+		-- 	if cmp.visible() then
+		-- 		cmp.select_next_item()
+		-- 	else
+		-- 		fallback()
+		-- 	end
+		-- end, { 'i', 's', }),
+		-- ['<C-p>'] = cmp.mapping(function(fallback)
+		-- 	if cmp.visible() then
+		-- 		cmp.select_prev_item()
+		-- 	else
+		-- 		fallback()
+		-- 	end
+		-- end, { 'i', 's', }),
+	},
+	sources = cmp.config.sources({
+		{ name = 'nvim_lsp' },
+		{ name = 'path' },
+		{ name = 'luasnip' }, -- For luasnip users.
+		-- { name = 'ultisnips' }, -- For ultisnips users.
+		-- { name = 'snippy' }, -- For snippy users.
+		}, {
+		{ name = 'buffer', keyword_length = 5 },
+	}),
+	formatting = {
+		format = lspkind.cmp_format({
+			with_text = true,
+			menu = {
+				buffer = "[buf]",
+				nvim_lsp = "[LSP]",
+				path = "[path]",
+				nvim_lua = "[lua]",
+			}
+		}),
+	},
+	experimental = {
+		native_menu = false,
+		ghost_text = true,
+	}
+})
+
+-- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
+cmp.setup.cmdline('/', {
+	sources = {
+		{ name = 'buffer' }
+	}
+})
+
+-- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+cmp.setup.cmdline(':', {
+	sources = cmp.config.sources({
+		{ name = 'path' }
+	}, {
+		{ name = 'cmdline' }
+	})
+})
+
 require("lualine").setup {
   options = {
     icons_enabled = true,
