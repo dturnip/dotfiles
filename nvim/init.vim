@@ -205,7 +205,6 @@ autocmd ColorScheme nord call Nord_config()
 
 colorscheme nord
 
-lua << END
 " autocmd BufEnter * call Bufferline_config()
 autocmd VimEnter * call Bufferline_config()
 
@@ -264,6 +263,8 @@ end
 
 local cmp = require("cmp")
 local lspkind = require("lspkind")
+require("Comment").setup()
+
 -- Setup completion symbols
 
 lspkind.init({
@@ -399,7 +400,7 @@ require('nvim-treesitter.configs').setup({
 require("lualine").setup {
   options = {
     icons_enabled = true,
-    theme = 
+    theme =
 		vim.g.colors_name == "gruvbox" and "gruvbox-material" or
 		vim.g.colors_name == "nord" and "nord" or
 		"auto",
@@ -427,6 +428,5 @@ require("lualine").setup {
   tabline = {},
   extensions = {}
 }
-END
 
 EOF
