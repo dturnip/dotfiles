@@ -462,6 +462,7 @@ require('nvim-treesitter.configs').setup({
 	}
 })
 
+-- lualine.nvim --
 require("lualine").setup {
   options = {
     icons_enabled = true,
@@ -492,6 +493,63 @@ require("lualine").setup {
   },
   tabline = {},
   extensions = {}
+}
+
+-- symbols-outline.nvim --
+vim.g.symbols_outline = {
+    highlight_hovered_item = true,
+    show_guides = true,
+    auto_preview = false,
+    position = 'right',
+    relative_width = true,
+    width = 75,
+    auto_close = false,
+    show_numbers = false,
+    show_relative_numbers = false,
+    show_symbol_details = true,
+    preview_bg_highlight = 'Pmenu',
+    keymaps = { -- These keymaps can be a string or a table for multiple keys
+        close = {"<Esc>", "q"},
+        goto_location = "<Cr>",
+        focus_location = "o",
+        hover_symbol = "<C-space>",
+        toggle_preview = "K",
+        rename_symbol = "r",
+        code_actions = "a",
+    },
+    lsp_blacklist = {},
+    symbol_blacklist = {
+		"String", "Number", "Boolean", "Array", "Key", "Null", "Variable",
+		"File", "EnumMember", "Operator", "TypeParameter"
+	},
+    symbols = {
+        -- File = {icon = "", hl = "CmpItemKindFile"},
+        Module = {icon = "", hl = "CmpItemKindModule"},
+        Namespace = {icon = "", hl = "TSNamespace"},
+        Package = {icon = "", hl = "TSNamespace"},
+        Class = {icon = "", hl = "CmpItemKindClass"},
+        Method = {icon = "", hl = "CmpItemKindMethod"},
+        Property = {icon = "", hl = "CmpItemKindProperty"},
+        Field = {icon = "", hl = "CmpItemKindField"},
+        Constructor = {icon = "", hl = "CmpItemKindConstructor"},
+        Enum = {icon = "", hl = "CmpItemKindEnum"},
+        Interface = {icon = "", hl = "CmpItemKindInterface"},
+        Function = {icon = "", hl = "CmpItemKindFunction"},
+        -- Variable = {icon = "", hl = "CmpItemKindVariable"},
+        Constant = {icon = "", hl = "CmpItemKindConstant"},
+        -- String = {icon = "𝓐", hl = "TSString"},
+        -- Number = {icon = "#", hl = "TSNumber"},
+        -- Boolean = {icon = "⊨", hl = "TSBoolean"},
+        -- Array = {icon = "", hl = "TSConstant"},
+        Object = {icon = "⦿", hl = "TSType"},
+        -- Key = {icon = "🔐", hl = "TSType"},
+        -- Null = {icon = "NULL", hl = "TSType"},
+        -- EnumMember = {icon = "", hl = "CmpItemKindEnumMember"},
+        Struct = {icon = "", hl = "CmpItemKindStruct"},
+        Event = {icon = "", hl = "CmpItemKindEvent"},
+        -- Operator = {icon = "", hl = "CmpItemKindOperator"},
+        -- TypeParameter = {icon = "", hl = "CmpItemKindTypeParameter"}
+    }
 }
 
 EOF
