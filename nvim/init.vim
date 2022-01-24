@@ -36,6 +36,8 @@ Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'hrsh7th/cmp-nvim-lua'
 Plug 'hrsh7th/nvim-cmp'
 
+Plug 'lewis6991/gitsigns.nvim'
+
 Plug 'numToStr/Comment.nvim'
 
 Plug 'onsails/lspkind-nvim'
@@ -549,7 +551,11 @@ vim.g.symbols_outline = {
         Event = {icon = "", hl = "CmpItemKindEvent"},
         -- Operator = {icon = "", hl = "CmpItemKindOperator"},
         -- TypeParameter = {icon = "", hl = "CmpItemKindTypeParameter"}
-    }
+    
+	}
 }
+
+-- gitsigns.nvim --
+require("gitsigns").setup()
 
 EOF
