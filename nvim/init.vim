@@ -148,14 +148,14 @@ function Bufferline_config()
 
 	" Buffer opened on VimEnter that is not NERD_tree
 
-	if stridx(bufname("%"), "NERD_tree") == -1
-		if strchars(bufname("%")) > 0
-			:NERDTree | wincmd p
-		endif
-	endif
+	" if stridx(bufname("%"), "NERD_tree") == -1
+	" 	if strchars(bufname("%")) > 0
+	" 		:NERDTree | wincmd p
+	" 	endif
+	" endif
 
 	" Space Bufferline
-	lua require('bufferline.state').set_offset(40, 'FileTree')
+	" lua require('bufferline.state').set_offset(40, '')
 	let g:bufferline.icon_pinned = ''
 	let g:bufferline.icon_close_tab_modified = '●'
 	let g:bufferline.maximum_padding = 4
