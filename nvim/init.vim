@@ -40,6 +40,9 @@ Plug 'numToStr/Comment.nvim'
 
 Plug 'onsails/lspkind-nvim'
 
+Plug 'simrat39/rust-tools.nvim'
+Plug 'simrat39/symbols-outline.nvim'
+
 call plug#end()
 
 " General options
