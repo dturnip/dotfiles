@@ -253,6 +253,9 @@ nnoremap <silent> ga    <cmd>lua vim.lsp.buf.code_action()<CR>
 nnoremap <silent> g[ <cmd>lua vim.diagnostic.goto_prev()<CR>
 nnoremap <silent> g] <cmd>lua vim.diagnostic.goto_next()<CR>
 
+nnoremap <silent> gs :SymbolsOutline<CR>
+
+
 lua require('colorizer').setup()
 
 lua << EOF
