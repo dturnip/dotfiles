@@ -25,6 +25,8 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'romgrk/barbar.nvim'
 Plug 'norcalli/nvim-colorizer.lua'
 
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
@@ -298,7 +300,7 @@ local nvim_lsp = require('lspconfig')
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'rust_analyzer', 'tsserver', 'vimls' }
+local servers = { 'rust_analyzer', 'tsserver', 'vimls', 'pyright' }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     -- on_attach = on_attach,
@@ -458,7 +460,7 @@ cmp.setup.cmdline(':', {
 })
 
 require('nvim-treesitter.configs').setup({
-	ensure_installed = { 'rust', 'javascript', 'typescript' },
+	ensure_installed = { 'rust', 'javascript', 'typescript', 'python' },
 	highlight = {
 		enable = true,
 	}
