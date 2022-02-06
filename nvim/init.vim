@@ -117,7 +117,7 @@ au Filetype rust setlocal shiftwidth=4 softtabstop=4 tabstop=4
 let g:neoformat_enabled_lua = ['stylua']
 
 lua vim.opt.list = true
-lua require("indent_blankline").setup {char="│", buftype_exclude={"terminal"}, show_end_of_line=true, show_current_context=true, show_first_indent_level=true}
+"lua require("indent_blankline").setup {char="│", buftype_exclude={"terminal"}, show_end_of_line=true, show_current_context=true, show_current_context_start=true, show_first_indent_level=true}
 
 " TextEdit might fail if hidden is not set.
 set hidden
@@ -235,10 +235,12 @@ endfunction
 autocmd ColorScheme gruvbox call Gruvbox_config()
 autocmd ColorScheme nord call Nord_config()
 
-colorscheme nord
+colorscheme gruvbox
 
 " autocmd BufEnter * call Bufferline_config()
 autocmd VimEnter * call Bufferline_config()
+" Do this until nvim treesitter supports 3.10+ syntax
+" au Filetype python colorscheme gruvbox | call Gruvbox_config()
 
 set completeopt=menu,menuone,noselect
 
@@ -559,5 +561,13 @@ vim.g.symbols_outline = {
 
 -- gitsigns.nvim --
 require("gitsigns").setup()
+
+-- indent_blankline.nvim --
+require("indent_blankline").setup {
+    char = "│",
+    context_char = "│",
+    show_current_context = true,
+    show_current_context_start = true,
+}
 
 EOF
